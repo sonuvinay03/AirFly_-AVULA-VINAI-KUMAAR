@@ -1,1 +1,30 @@
+# Flight Delay Analysis
 
+This project analyzes flight delay data to identify key factors contributing to delays, visualize trends, and generate insights for improving airline performance.
+
+## Files in this Repository
+
+- **DelayedFlights.ipynb** — Jupyter Notebook containing the full exploratory data analysis (EDA) and visualizations.
+- **requirements.txt** — List of Python libraries required to run the notebook.
+
+## Objectives
+
+- Perform exploratory data analysis (EDA) on flight delay data.
+- Identify major causes of flight delays.
+- Visualize delay patterns based on airlines, airports, and time periods.
+- Suggest potential data-driven strategies to minimize delays.
+
+## Tools and Libraries Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib / Seaborn
+- Plotly (optional)
+- Scikit-learn (if modeling is included)
+
+## Key Insights
+
+- Distribution of delays across airlines and airports.
+- Correlation between delay duration and weather conditions.
+- Seasonal patterns influencing flight punctuality.
