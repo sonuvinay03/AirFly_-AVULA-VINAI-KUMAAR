@@ -1,30 +1,134 @@
-# Flight Delay Analysis
+# Flight Booking & Travel Data Analysis Dashboard
 
-This project analyzes flight delay data to identify key factors contributing to delays, visualize trends, and generate insights for improving airline performance.
+## Overview
 
-## Files in this Repository
+This dashboard provides a summary of flight booking and travel behavior using multiple visualizations.  
+It focuses on ticket revenue, passenger demographics, travel routes, travel class preferences, and payment methods.
 
-- **DelayedFlights.ipynb** — Jupyter Notebook containing the full exploratory data analysis (EDA) and visualizations.
-- **requirements.txt** — List of Python libraries required to run the notebook.
+---
 
-## Objectives
+## 1. KPI Cards (Top Summary Tiles)
 
-- Perform exploratory data analysis (EDA) on flight delay data.
-- Identify major causes of flight delays.
-- Visualize delay patterns based on airlines, airports, and time periods.
-- Suggest potential data-driven strategies to minimize delays.
+1. **Count of Booking ID – 250**  
+   Total number of bookings in the dataset.
 
-## Tools and Libraries Used
+2. **Sum of Ticket Price – $0.64M**  
+   Total revenue generated from all tickets.
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib / Seaborn
-- Plotly (optional)
-- Scikit-learn (if modeling is included)
+3. **Average of Passenger Age – 45.60**  
+   Mean age of all passengers who booked tickets.
 
-## Key Insights
+4. **Sum of Distance (km) – 1.89M**  
+   Combined travel distance of all flights.
 
-- Distribution of delays across airlines and airports.
-- Correlation between delay duration and weather conditions.
-- Seasonal patterns influencing flight punctuality.
+5. **Average Flight Duration – 11.04 hours**  
+   Average duration per flight, indicating a dominance of long-haul routes.
+
+6. **Average Ticket Price – $2,578**  
+   Average price paid per ticket.
+
+**Insight:**  
+The dataset represents 250 bookings with high overall revenue and long average flight duration, suggesting many international or long-distance journeys.
+
+---
+
+## 2. Sum of Ticket Price by Airline (Horizontal Bar Chart)
+
+- Visual Type: Horizontal bar chart  
+- Metric: Sum of `Ticket_Price` grouped by `Airline`
+
+**What it shows:**  
+This chart compares total ticket revenue contributed by each airline.
+
+**Key insights:**
+
+- B Airways has the highest ticket revenue (approximately $0.13M).
+- S Airlines and E Airlines follow closely, around $0.11M each.
+- Revenue is relatively well distributed across airlines, but B Airways is the top contributor.
+
+---
+
+## 3. Sum of Ticket Price by Departure City (Vertical Bar Chart)
+
+- Visual Type: Vertical bar chart  
+- Metric: Sum of `Ticket_Price` grouped by `Departure_City`
+
+**What it shows:**  
+This chart highlights which departure cities generate the most ticket revenue.
+
+**Key insights:**
+
+- Mumbai is the highest revenue-generating departure city (around $98K), followed by London (around $91K).
+- Other cities such as Delhi, Singapore, Frankfurt, Dubai, and New York contribute progressively lower revenues.
+- Mumbai and London appear to be major travel hubs in this dataset.
+
+---
+
+## 4. Ticket Price by Passenger Age (Histogram / Column Chart by Age Bins)
+
+- Visual Type: Column chart with age bins  
+- Metric: Sum of `Ticket_Price` by `Passenger_Age` (binned ranges)
+
+**What it shows:**  
+This chart examines how total ticket spending varies across different passenger age groups.
+
+**Key insights:**
+
+- Higher spending is seen in the 25–30 age range and again in the 70–80 age range.
+- Middle-aged groups (around 40–60) show moderate but consistent ticket spending.
+- Younger professionals and elderly passengers appear to contribute significantly to total revenue, possibly due to business and leisure travel.
+
+---
+
+## 5. Count of Booking by Travel_Class (Horizontal Bar Chart)
+
+- Visual Type: Horizontal bar chart  
+- Metric: Count of `Booking_ID` grouped by `Travel_Class`
+
+**What it shows:**  
+This chart compares the number of bookings across different travel classes.
+
+**Key insights:**
+
+- Premium Economy has the highest number of bookings (69).
+- First Class (63), Business (62), and Economy (56) follow closely behind.
+- Premium Economy is the most preferred segment, indicating that passengers favor a balance of comfort and price over the extremes of Economy or First.
+
+---
+
+## 6. Ticket Price by Payment_Method (Treemap)
+
+- Visual Type: Treemap  
+- Metric: Sum of `Ticket_Price` grouped by `Payment_Method`
+
+**What it shows:**  
+This chart shows how revenue is distributed across different payment methods, with each rectangle sized by total ticket revenue.
+
+**Key insights:**
+
+- Credit Card and Net Banking generate the highest revenue (around $120K each).
+- PayPal and Cash contribute slightly lower but still significant revenue.
+- UPI generates the lowest total ticket revenue (around $74K).
+- Digital methods linked to banks (Credit Card, Net Banking) dominate high-value transactions.
+
+---
+
+## 7. Count of Booking_ID by Payment_Method (Donut Chart)
+
+- Visual Type: Donut (ring) chart  
+- Metric: Count of `Booking_ID` grouped by `Payment_Method`
+
+**What it shows:**  
+This chart focuses on the volume of bookings by payment method rather than revenue.
+
+**Key insights:**
+
+- Credit Card has the highest share of bookings (about 18.8%).
+- Cash and PayPal also represent notable portions of total bookings (around 17–18% each).
+- Bookings are fairly distributed across multiple payment methods, with a slight preference for Credit Cards.
+
+---
+
+## Overall Insights
+
+The Flight Booking and Travel Data Analysis reveals a total of 250 bookings generating $0.64 million in revenue. The average passenger age is 45.6 years, with flights covering a combined distance of 1.89 million kilometers and an average duration of 11 hours, indicating mostly long-haul routes. B Airways and Mumbai emerge as top contributors to ticket revenue, highlighting key airline and city performance. Premium Economy is the most preferred travel class, reflecting passengers’ preference for balanced comfort and cost. Credit Card and Net Banking are the most used payment methods, showing strong adoption of digital transactions. Additionally, passengers aged 25–30 and 70–80 exhibit higher spending trends, suggesting both young professionals and senior travelers are prominent customer segments.
